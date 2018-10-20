@@ -1,3 +1,8 @@
+# How do I run this app?
+1. npm install
+2. ng serve --open
+  - This should open a browser window on localhost:4200
+
 # AngularDemoProductCategories
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.5.

@@ -1,0 +1,72 @@
+<div *ngIf="category">
+    <div class="card">
+        <div class="card-body"
+             style="text-align:left">
+            Category: {{category.name}}
+            <a class="btn btn-link" (click)="edit(category)"><span class="badge badge-primary badge-pill">Edit</span></a>
+            <div [hidden]="showTitleEdit" class="input-group mb-3">
+                <input [(ngModel)]="category.name" 
+                        type="text" 
+                        class="col-sm-4 form-control form-control-sm" 
+                        placeholder="Category Name">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary btn-sm" 
+                            type="button" 
+                            id="button-save"
+                            (click)="save(category)">Save</button>
+                </div>
+            </div> 
+
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body"
+            style="text-align:left">
+            <div class="card-title">Sub-categories</div>
+            <div class="input-group mb-3">
+
+            <input type="text" 
+                id="newCategoryName"
+                [(ngModel)]="newCategoryName"
+                class="col-sm-4 form-control form-control-sm" 
+                placeholder="Add sub-category">
+                <button class="btn btn-outline-secondary btn-sm" 
+                    type="button" 
+                    id="button-save"
+                    (click)="add(newCategoryName.value)">Add</button>    
+            </div>
+        </div>
+        <ul class="col-md-4 list-group">
+            <div *ngFor="let subCat of childrenCategories">
+                <a routerLink="/category/{{subCat.id}}" 
+                   routerLinkActive="active"
+                   class="list-group-item list-group-item-action"
+                   (click)="goRoute(subCat.id)">{{subCat.name}}</a>
+            </div>
+        </ul>
+        <button (click)="goBack()">go back</button>
+    </div>
+    <!-- <div class="col-md-6">
+        <h5 align="left" class="card-title">{{category.name}}</h5>
+        <div class="input-group mb-3">
+            <input [(ngModel)]="category.name" 
+                    type="text" 
+                    class="form-control" 
+                    (keyup.enter)="save(category)"
+                    (blur)="save(category)"
+                    placeholder="Category Name">
+        </div>
+        <div class="input-group mb-3"
+             *ngIf="children_categories"> 
+            <input #newChild
+                type="text"
+                class="form-control"
+                placeholder="New category">
+            <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+            </div>
+            <div class="list-group">
+            </div>
+        </div>
+    </div> -->
+</div>
