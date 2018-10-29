@@ -3,6 +3,7 @@ import { Category } from '../category';
 import { ActivatedRoute } from '@angular/router';
 import { CategoryService } from '../category.service';
 import { Location } from '@angular/common';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-category-detail',
@@ -18,7 +19,8 @@ export class CategoryDetailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private categoryService: CategoryService,
-    private location: Location
+    private location: Location,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -49,7 +51,9 @@ export class CategoryDetailComponent implements OnInit {
   }
 
   goRoute(id: number): void {
-    this.location.go(`/category/${id}`);
+    this.location.path();
+    // this.router.navigate([`/categories/${id}`]);
+    // this.router.navigate(['/categories/2']);
   }
 
   goBack(): void {

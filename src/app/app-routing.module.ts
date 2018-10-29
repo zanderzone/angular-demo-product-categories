@@ -5,10 +5,11 @@ import { CategoriesComponent } from './categories/categories.component';
 import { Category } from './category';
 import { CategoryDetailComponent } from './category-detail/category-detail.component';
 import { CategoryDetailGuard } from './category-detail.guard'
+
 const routes: Routes = [
-  { path: '', redirectTo: '/categories', pathMatch: 'full' },
-  { path: 'category/:id', component: CategoryDetailComponent },
-  { path: 'categories', component: CategoriesComponent },
+  { path: '', redirectTo: 'categories', pathMatch: 'full' },
+  { path: 'categories/:id', component: CategoryDetailComponent },
+  { path: 'categories', component: CategoriesComponent }, 
 ];
 
 @NgModule({
@@ -16,7 +17,7 @@ const routes: Routes = [
     RouterModule.forRoot(
       routes,
       { enableTracing: true }
-      )
+    ),
   ],
   exports: [ 
     RouterModule 
