@@ -10,14 +10,12 @@ import { AppComponent } from './app.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { CategoryDetailComponent } from './category-detail/category-detail.component';
 import { AppRoutingModule } from './app-routing.module';
-import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CategoriesComponent,
     CategoryDetailComponent,
-    BreadcrumbComponent,
   ],
   imports: [
     BrowserModule,
