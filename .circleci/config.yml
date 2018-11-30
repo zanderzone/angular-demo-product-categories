@@ -1,5 +1,13 @@
 version: 2.1
 
+jobs:
+  build:
+    docker: # use the docker executor type; machine and macos executors are also supported
+      - image: circleci/node:8.14.0-stretch-browsers # the primary container, where your job's commands are run
+    steps:
+      - checkout # check out the code in the project directory
+      - run: echo "hello world" # run the `echo` command
+
 orbs:
     hello: circleci/hello-build@0.0.7 # uses the circleci/buildpack-deps Docker image
 
